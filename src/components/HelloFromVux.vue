@@ -138,26 +138,20 @@ export default {
   data () {
     return {
       postDate: {
-        start_site: '北京', // 出发地
-        end_site: '曲阜', // 目的地
+        start_site: '', // 出发地
+        end_site: '', // 目的地
         start_time: [], // 出发日期
-        user_phone: '176000676767',
-        refill_phone: '17622222222',
-        user_weixin: 'weisixn',
-        user_message: '这呵呵好好发挥',
+        user_phone: '',
+        refill_phone: '',
+        user_weixin: '',
+        user_message: '',
         train_time: '00:00', // 出发时间
         end_train_time: '23:59', // 最晚出发时间
-        train_type: ['G_高铁'], // 车次类型
-        seat: ['二等座'], // 坐席
-        pwd_12306: '237826090@qq.com',
-        name_12306: 'password',
-        user_list: [
-          {
-            userId: '370828666666666666',
-            userName: '陈威',
-            userType: '成人票'
-          }
-        ]
+        train_type: [], // 车次类型
+        seat: [], // 坐席
+        pwd_12306: '',
+        name_12306: '',
+        user_list: []
       },
       userInfo: {
         userType: '成人票',

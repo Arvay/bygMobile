@@ -403,7 +403,10 @@ export default {
     color: coral;
   }
 .vux-demo {
+  background: #fff;
   overflow: hidden;
+  max-width: 750px;
+  margin: 0 auto;
 }
 .logo {
   width: 100px;

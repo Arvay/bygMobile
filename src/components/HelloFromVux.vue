@@ -8,8 +8,33 @@
             <tab-item @on-item-click="handler">填写信息</tab-item>
           </tab>
         </sticky>
-        <div v-if="tabIndex === 0">订单须知</div>
+        <div class="notice" v-if="tabIndex === 0">
+          <group gutter="6px">
+            <span>1：12306账号有多点登陆的限制，也就是说，账号若同时在多个地方登陆，就会被轮流踢下线，所以，发给我们的账号密码不要在其它地方抢票。</span>
+          </group>
+          <group gutter="6px">
+            <span>2：预售指还未开卖的票，车没开的票都能抢到，只要车次放票出票率高达99%。</span>
+          </group>
+          <group gutter="6px">
+            <span>3：预售没买到的车票自动为您捡漏抢票。</span>
+          </group>
+          <group gutter="6px">
+            <span>4：您在登记后需要取消抢票或变更出行日期，请第一时间联系我们，请把宝贵的车票留给别人，谢谢。</span>
+          </group>
+          <group gutter="6px">
+            <span>5：手里有其他票的注意，行程冲突时间交叉的不能购票，对手里票不满意的可以联系我们改签抢票。</span>
+          </group>
+          <group gutter="6px">
+            <span>6：预售订单在预售时间点微信在线等通知，捡漏订单请6:00-23:00手机开机不要静音，特别是早6:00出票机率最高。</span>
+          </group>
+          <group gutter="6px">
+            <span>7：发车前凭订票时登记的证件原件和E开头订单号，可在全国联网任意火车站或代售点取票。</span>
+          </group>
+        </div>
         <div v-else>
+          <!--<marquee>-->
+            <!--<marquee-item v-for="i, key in titleMessage" :key="key">{{i}}</marquee-item>-->
+          <!--</marquee>-->
           <group gutter="6px">
             <x-input title="出发地(必填)" required v-model="postDate.start_site"></x-input>
             <x-input title="目的地(必填)" required v-model="postDate.end_site"></x-input>
@@ -109,11 +134,13 @@
 </template>
 
 <script>
-import { Group, Msg, XTextarea, XButton, XTable, Toast, ViewBox, PopupHeader, Popup, Checker, CheckerItem, PopupRadio, Checklist, Datetime, Calendar, XInput, Tab, TabItem, XHeader, Cell, Sticky } from 'vux'
+import { Group, Marquee, MarqueeItem, Msg, XTextarea, XButton, XTable, Toast, ViewBox, PopupHeader, Popup, Checker, CheckerItem, PopupRadio, Checklist, Datetime, Calendar, XInput, Tab, TabItem, XHeader, Cell, Sticky } from 'vux'
 
 export default {
   components: {
     Group,
+    Marquee,
+    MarqueeItem,
     Msg,
     XTable,
     XTextarea,
@@ -158,6 +185,10 @@ export default {
         userName: '',
         userId: ''
       },
+      titleMessage: [
+        '12306账号有多点登陆的限制，也就是说，账号若同时在多个地方登陆，就会被轮流踢下线，所以，发给我们的账号密码不要在其它地方抢票',
+        '预售指还未开卖的票，车没开的票都能抢到，只要车次放票出票率高达99%。'
+      ],
       isShowToast: false,
       message: '提示消息',
       showContent: false,
@@ -347,6 +378,15 @@ export default {
   }
 </style>
 <style scoped>
+  .notice span {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 10px;
+    color: #666;
+    font-size: 14px;
+  }
   .btnStyle {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
